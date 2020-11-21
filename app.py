@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
+BLOGS_PER_PAGE = 5
 
 app = Flask(__name__)
 
@@ -20,7 +21,8 @@ class Blogpost(db.Model):
 
 @app.route('/')
 def index():
-    posts = Blogpost.query.order_by(Blogpost.date_posted.desc()).all()
+    page = request.args.get('page', 1, type=int)
+    posts = Blogpost.query.order_by(Blogpost.date_posted.desc()).paginate(page=page, per_page=BLOGS_PER_PAGE)
     return render_template('index.html', posts=posts)
 
 
