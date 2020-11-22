@@ -19,6 +19,11 @@ class Blogpost(db.Model):
     content = db.Column(db.Text)
 
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+
 @app.route('/')
 def index():
     page = request.args.get('page', 1, type=int)
