@@ -4,9 +4,6 @@ from datetime import datetime
 from access_lvl import  Access_lvl
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
-from flask_wtf import FlaskForm 
-from wtforms import StringField, PasswordField, BooleanField
-from wtforms.validators import InputRequired, Email, Length
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin, LoginManager, current_user, login_user, login_required, logout_user
 
