@@ -11,7 +11,7 @@ BLOGS_PER_PAGE = 5
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////home/sergio/Documents/projects/flask/blog.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
 app.config['SECRET_KEY'] = 'kc98qi3odc093rjc0w9u3lcfu8u4'
 
 db = SQLAlchemy(app)
